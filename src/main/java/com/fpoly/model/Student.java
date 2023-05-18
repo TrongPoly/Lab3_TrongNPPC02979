@@ -6,7 +6,7 @@ public class Student {
 	Double marks;
 	Boolean gender;
 	String faculty;
-
+//hello
 	public String getName() {
 		return name;
 	}
