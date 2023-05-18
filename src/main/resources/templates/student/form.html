@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style type="text/css">
+input[type=checkbox],input[type=radio] {
+	margin: 0 5px 0 12px;
+}
+</style>
+</head>
+<body>
+	<form action="#" th:action="@{/student/save}" class="col-6 offset-3"
+		method="post" th:object="${student}">
+		<div class="form-group">
+			<label>Name</label> <input class="form-control" th:field="*{name}">
+		</div>
+		<div class="form-group">
+			<label>Email</label> <input class="form-control" th:field="*{email}">
+		</div>
+		<div class="form-group">
+			<label>Marks</label> <input class="form-control" th:field="*{marks}">
+		</div>
+		<div class="form-group">
+			<label>Gender</label> <br> <input type="radio" th:field="*{gender}"
+				th:each="g : ${genders}" th:value="${g.key}" th:text="${g.value}"> 
+		</div>
+		<div class="form-group">
+			<label>Faculty</label> <select class="form-control" th:field="*{faculty}">
+				<option th:each="f : ${faculties}" th:value="${f}" th:text="${f}">
+			</select>
+		</div>
+		<div class="form-group">
+			<label>Hobbies</label> <br> <input type="checkbox"
+				th:field="*{hobbies}" th:each="h : ${hobbies}" th:value="${h.key}" th:text="${h.value}">
+		</div>
+		<button class="btn btn-success" type="submit">Save</button>
+	</form>
+</body>
+</html>

@@ -1,11 +1,14 @@
 package com.fpoly.model;
 
+import java.util.List;
+
 public class Student {
 	String name;
 	String email;
 	Double marks;
 	Boolean gender;
 	String faculty;
+	List<String> hobbies;
 
 
 	public String getName() {
@@ -49,13 +52,22 @@ public class Student {
 		this.faculty = faculty;
 	}
 
-	public Student(String name, String email, Double marks, Boolean gender, String faculty) {
+	public List<String> getHobbies() {
+		return hobbies;
+	}
+
+	public void setHobbies(List<String> hobbies) {
+		this.hobbies = hobbies;
+	}
+
+	public Student(String name, String email, Double marks, Boolean gender, String faculty, List<String> hobbies) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.marks = marks;
 		this.gender = gender;
 		this.faculty = faculty;
+		this.hobbies = hobbies;
 	}
 
 	public Student() {
