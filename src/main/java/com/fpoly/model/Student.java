@@ -7,12 +7,12 @@ public class Student {
 	Boolean gender;
 	String faculty;
 
-//hello
+
 	public String getName() {
 		return name;
 	}
 
-//Thầy đã cmt
+
 	public void setName(String name) {
 		this.name = name;
 	}
