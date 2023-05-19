@@ -2,8 +2,20 @@ package com.fpoly.model;
 
 import java.util.List;
 
+
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
+
+
 public class Student {
-	String name;
+	
+	@NotEmpty
+	@Size(min = 20,message = "20")
+	String name; 
 	String email;
 	Double marks;
 	Boolean gender;

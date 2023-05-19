@@ -6,13 +6,19 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import javax.naming.Binding;
+import javax.naming.spi.DirStateFactory.Result;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.fpoly.model.Student;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class StudentController {
@@ -22,8 +28,11 @@ public class StudentController {
 	}
 
 	@PostMapping("/student/save")
-	public String save(@ModelAttribute("student") Student student, Model model) {
-
+	public String save(@Valid @ModelAttribute("student") Student student, BindingResult result,  Model model) {
+		
+		if(result.hasErrors()) {
+			return "student/form";
+		}
 		if (student.getGender()) {
 			model.addAttribute("gender", "Male");
 		} else
