@@ -2,11 +2,18 @@ package com.fpoly.model;
 
 import java.util.List;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 public class Student {
+
+	@NotEmpty
+	@Size(min = 20, message = "{Size.Student.Name}")
 	String name;
 	String email;
 	Double marks;
 	Boolean gender;
+
 	String faculty;
 	List<String> hobbies;
 
