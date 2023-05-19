@@ -7,8 +7,8 @@ import jakarta.validation.constraints.Size;
 
 public class Student {
 
-	@NotEmpty
-	@Size(min = 20, message = "{Size.Student.Name}")
+	
+	@Size(min = 20, message = "{Size.Staff.Name}")
 	String name;
 	String email;
 	Double marks;
