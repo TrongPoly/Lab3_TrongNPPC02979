@@ -48,8 +48,8 @@ public class StudentController {
 		if (student.getHobbies().contains("O")) {
 			hb = hb.concat("Other, ");
 		}
-//		model.addAttribute("hb", hb);
-//		model.addAttribute("std", student);
+		model.addAttribute("hb", hb);
+		model.addAttribute("std", student);
 
 		return "student/result";
 	}

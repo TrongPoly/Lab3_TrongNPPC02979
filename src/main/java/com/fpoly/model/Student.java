@@ -2,19 +2,33 @@ package com.fpoly.model;
 
 import java.util.List;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.NotNull;
 
 public class Student {
 
-	
-	@Size(min = 20, message = "{Size.Staff.Name}")
+	@NotBlank(message = "{Blank.Name}")
 	String name;
+
+	@NotBlank(message = "{Blank.Email}")
+	@Email(message = "{Format.Email}")
 	String email;
+
+	@Min(value = 0, message = "{Min.Marks}")
+	@Max(value = 10, message = "{Max.Marks}")
+	@NotNull(message = "{Null.Marks}")
 	Double marks;
+
+	@NotNull(message = "{Null.Gender}")
 	Boolean gender;
 
 	String faculty;
+
+	@NotEmpty(message = "{Empty.Hobbies}")
 	List<String> hobbies;
 
 	public String getName() {

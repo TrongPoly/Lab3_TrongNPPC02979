@@ -12,6 +12,7 @@ public class ResourceConfig {
 		ReloadableResourceBundleMessageSource ms = new ReloadableResourceBundleMessageSource();
 		ms.setBasenames("classpath:messages/student");
 		ms.setDefaultEncoding("utf-8");
+
 		return ms;
 	}
 }
