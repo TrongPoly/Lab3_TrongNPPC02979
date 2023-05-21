@@ -34,7 +34,6 @@ public class StudentController {
 			model.addAttribute("gender", "Female");
 
 		String hb = " ";
-		hb.concat("haha");
 		if (student.getHobbies().contains("T")) {
 			hb = hb.concat("Travelling, ");
 
@@ -53,6 +52,8 @@ public class StudentController {
 
 		return "student/result";
 	}
+
+	// Bài 2
 
 	@ModelAttribute("faculties")
 	public List<String> getFaculties() {

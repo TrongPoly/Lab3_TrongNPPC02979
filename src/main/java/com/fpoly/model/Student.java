@@ -27,7 +27,6 @@ public class Student {
 	Boolean gender;
 
 	String faculty;
-
 	@NotEmpty(message = "{Empty.Hobbies}")
 	List<String> hobbies;
 
