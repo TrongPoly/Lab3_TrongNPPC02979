@@ -11,7 +11,7 @@ import jakarta.validation.constraints.NotNull;
 
 public class Student {
 
-	@NotBlank(message = "{Blank.Name}")
+	//@NotBlank(message = "{Blank.Name}")
 	String name;
 
 	@NotBlank(message = "{Blank.Email}")
